@@ -85,6 +85,15 @@ export default function (app: Application) {
           },
         },
       ],
+      tech: [
+        {
+          type: {
+            type: String,
+            maxLength: 64,
+            index: true,
+          },
+        },
+      ],
       users: [{ type: mongoose.Schema.Types.ObjectId }],
     },
     {
