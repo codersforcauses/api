@@ -40,7 +40,7 @@
   "dependencies": {
     "@feathersjs/configuration": "4.5.8",
     "@feathersjs/errors": "4.5.8",
-    "@feathersjs/express": "4.5.2",
+    "@feathersjs/express": "4.5.8",
     "@feathersjs/feathers": "4.5.8",
     "@feathersjs/socketio": "4.5.2",
     "@feathersjs/transport-commons": "4.5.2",
