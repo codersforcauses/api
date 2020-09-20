@@ -321,18 +321,18 @@
     events "^3.2.0"
     uberproto "^2.0.6"
 
-"@feathersjs/socketio@4.5.2":
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/@feathersjs/socketio/-/socketio-4.5.2.tgz#6a87197d516026c2b07c4eb61a9f7d472180c0c2"
-  integrity sha512-Azf1bXrpPxa7q6jbz4+Hhnzyz2EO6Wna3iphEINy5gRvIXHPUZ0yI9BnoxZ3gWzuBUM+4tKwEDQc6F4K43w6Cg==
+"@feathersjs/socketio@4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@feathersjs/socketio/-/socketio-4.5.8.tgz#5d33ff0af270c735b84a5289624e7e4692c0d675"
+  integrity sha512-bcH8Ed4cEm9A5wktvKTvLSClC2VBuAOBV/F1dNYu+CeJTufA+LuiBvt1wEEtxRhGL/7DF0N0gekdg8KKGc9BGQ==
   dependencies:
-    "@feathersjs/transport-commons" "^4.5.2"
-    "@types/socket.io" "^2.1.4"
+    "@feathersjs/transport-commons" "^4.5.8"
+    "@types/socket.io" "^2.1.10"
     debug "^4.1.1"
     socket.io "^2.3.0"
     uberproto "^2.0.6"
 
-"@feathersjs/transport-commons@4.5.2", "@feathersjs/transport-commons@^4.5.2":
+"@feathersjs/transport-commons@4.5.2":
   version "4.5.2"
   resolved "https://registry.yarnpkg.com/@feathersjs/transport-commons/-/transport-commons-4.5.2.tgz#3acbaf56cdd5519a671dc36082edd8360ffd3aed"
   integrity sha512-H+9RYXaO0Lgz8EN0v1iY4IOf5XPq1jXA+qaCE1Gw1/6iOha8cCLUOFc30fNbnZNmZ3JLBTna8Y8Z9Fx5nSRZrQ==
@@ -341,6 +341,17 @@
     "@feathersjs/errors" "^4.5.2"
     debug "^4.1.1"
     lodash "^4.17.15"
+    radix-router "^3.0.1"
+
+"@feathersjs/transport-commons@^4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@feathersjs/transport-commons/-/transport-commons-4.5.8.tgz#19d2a397ac1e779b4ee3286587d7054f14f6f66d"
+  integrity sha512-feECInVjgXdNxlXImdhB72+4Q89G4NXQTXcBmtGmI7tJtDFN+5cak23t7vp2EvNUlwexaYGL3DZMVD/KxYU3yA==
+  dependencies:
+    "@feathersjs/commons" "^4.5.8"
+    "@feathersjs/errors" "^4.5.8"
+    debug "^4.1.1"
+    lodash "^4.17.19"
     radix-router "^3.0.1"
 
 "@istanbuljs/load-nyc-config@^1.0.0":
@@ -600,6 +611,13 @@
   dependencies:
     "@types/express" "*"
 
+"@types/engine.io@*":
+  version "3.1.4"
+  resolved "https://registry.yarnpkg.com/@types/engine.io/-/engine.io-3.1.4.tgz#3d9472711d179daa7c95c051e50ad411e18a9bdc"
+  integrity sha512-98rXVukLD6/ozrQ2O80NAlWDGA4INg+tqsEReWJldqyi2fulC9V7Use/n28SWgROXKm6003ycWV4gZHoF8GA6w==
+  dependencies:
+    "@types/node" "*"
+
 "@types/express-serve-static-core@*":
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/@types/express-serve-static-core/-/express-serve-static-core-4.17.4.tgz#157c79c2d28b632d6418497c57c93185e392e444"
@@ -703,11 +721,12 @@
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
 
-"@types/socket.io@^2.1.4":
-  version "2.1.4"
-  resolved "https://registry.yarnpkg.com/@types/socket.io/-/socket.io-2.1.4.tgz#674e7bc193c5ccdadd4433f79f3660d31759e9ac"
-  integrity sha512-cI98INy7tYnweTsUlp8ocveVdAxENUThO0JsLSCs51cjOP2yV5Mqo5QszMDPckyRRA+PO6+wBgKvGvHUCc23TQ==
+"@types/socket.io@^2.1.10":
+  version "2.1.11"
+  resolved "https://registry.yarnpkg.com/@types/socket.io/-/socket.io-2.1.11.tgz#e0d6759880e5f9818d5297a3328b36641bae996b"
+  integrity sha512-bVprmqPhJMLb9ZCm8g0Xy8kwBFRbnanOWSxzWkDkkIwxTvud5tKMfAJymXX6LQbizUKCS1yima7JM4BeLqjNqA==
   dependencies:
+    "@types/engine.io" "*"
     "@types/node" "*"
 
 "@types/stack-utils@^1.0.1":
