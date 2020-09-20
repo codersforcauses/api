@@ -284,7 +284,7 @@
     config "^3.3.1"
     debug "^4.1.1"
 
-"@feathersjs/errors@4.5.8":
+"@feathersjs/errors@4.5.8", "@feathersjs/errors@^4.5.8":
   version "4.5.8"
   resolved "https://registry.yarnpkg.com/@feathersjs/errors/-/errors-4.5.8.tgz#4ec2d954953990f5fd61d81459577cd0e0e082e0"
   integrity sha512-PPpTHpCuWR0nbs4vvQEdXC5gLnWHmeDCF+hm9IJouzYkYIjt0UG/vKvPCBNqCREVHVfSrszdzI1MSeHRSUQddQ==
@@ -298,17 +298,17 @@
   dependencies:
     debug "^4.1.1"
 
-"@feathersjs/express@4.5.2":
-  version "4.5.2"
-  resolved "https://registry.yarnpkg.com/@feathersjs/express/-/express-4.5.2.tgz#cc6687fd9d0501a02cbe19ce17d99b2232d86d42"
-  integrity sha512-aGyWJK0+iwT6Vl8XIXuzhgf3wJh73DL3n+QvdaHWEQk1Oe6gCgyfadAptE18lhF7whnbXWzRNQxhb5EAKs2yeQ==
+"@feathersjs/express@4.5.8":
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/@feathersjs/express/-/express-4.5.8.tgz#422637e0b7633c65a71845fc9370daf50512d9e6"
+  integrity sha512-Tg5WvNUG2tsxl4j9l+dHqTFYSxaPcRLV7yZLXTuPALXshpFsGC5ZeDBDHbadMEAlsy5ctiqwgjcOWMChUw00kg==
   dependencies:
-    "@feathersjs/commons" "^4.5.2"
-    "@feathersjs/errors" "^4.5.2"
-    "@types/express" "^4.17.2"
+    "@feathersjs/commons" "^4.5.8"
+    "@feathersjs/errors" "^4.5.8"
+    "@types/express" "^4.17.7"
     debug "^4.1.1"
     express "^4.17.1"
-    lodash "^4.17.15"
+    lodash "^4.17.19"
     uberproto "^2.0.6"
 
 "@feathersjs/feathers@4.5.8", "@feathersjs/feathers@^4.5.8":
@@ -608,10 +608,20 @@
     "@types/node" "*"
     "@types/range-parser" "*"
 
-"@types/express@*", "@types/express@^4.17.2":
+"@types/express@*":
   version "4.17.6"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.6.tgz#6bce49e49570507b86ea1b07b806f04697fac45e"
   integrity sha512-n/mr9tZI83kd4azlPG5y997C/M4DNABK9yErhFM6hKdym4kkmd9j0vtsJyjFIwfRBxtrxZtAfGZCNRIBMFLK5w==
+  dependencies:
+    "@types/body-parser" "*"
+    "@types/express-serve-static-core" "*"
+    "@types/qs" "*"
+    "@types/serve-static" "*"
+
+"@types/express@^4.17.7":
+  version "4.17.8"
+  resolved "https://registry.yarnpkg.com/@types/express/-/express-4.17.8.tgz#3df4293293317e61c60137d273a2e96cd8d5f27a"
+  integrity sha512-wLhcKh3PMlyA2cNAB9sjM1BntnhPMiM0JOBwPBqttjHev2428MLEB4AYVN+d8s2iyCVZac+o41Pflm/ZH5vLXQ==
   dependencies:
     "@types/body-parser" "*"
     "@types/express-serve-static-core" "*"
@@ -3405,6 +3415,11 @@ lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+
+lodash@^4.17.19:
+  version "4.17.20"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
+  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
 
 logform@^2.1.1:
   version "2.1.2"
