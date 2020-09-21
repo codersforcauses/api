@@ -27,7 +27,6 @@ export default function (app: Application) {
       },
       email: {
         type: String,
-        match: '^.+@.+\\..+$',
         maxLength: 128,
         index: true,
         trim: true,
