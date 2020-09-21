@@ -43,6 +43,8 @@ export default function (app: Application) {
         {
           type: String,
           enum: [
+            'admin',
+            'test',
             'member',
             'president',
             'vice_president',
