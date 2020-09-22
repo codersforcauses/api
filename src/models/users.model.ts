@@ -34,7 +34,7 @@ export default function (app: Application) {
         required: true,
         unique: true
       },
-      aws_sub: {
+      awsSub: {
         type: String,
         maxLength: 64,
         index: true,
