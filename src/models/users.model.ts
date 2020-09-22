@@ -34,6 +34,14 @@ export default function (app: Application) {
         required: true,
         unique: true
       },
+      aws_sub: {
+        type: String,
+        maxLength: 64,
+        index: true,
+        trim: true,
+        required: true,
+        unique: true
+      },
       gender: {
         type: String,
         enum: ['female', 'male', 'other']
@@ -102,7 +110,7 @@ export default function (app: Application) {
         {
           type: {
             type: String,
-            enum: ['aws_cognito', 'stripe']
+            enum: ['stripe']
           },
           ref: {
             type: String,
