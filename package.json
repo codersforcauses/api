@@ -52,7 +52,7 @@
     "@types/helmet": "0.0.45",
     "@types/jest": "25.2.1",
     "@types/serve-favicon": "2.5.0",
-    "axios": "0.19.2",
+    "axios": "0.20.0",
     "jest": "25.3.0",
     "nodemon": "2.0.4",
     "shx": "0.3.2",
