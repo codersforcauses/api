@@ -93,7 +93,7 @@ export default function (app: Application) {
           }
         }
       ],
-      users: [{ type: mongoose.Schema.Types.ObjectId }]
+      members: [{ type: mongoose.Schema.Types.ObjectId }]
     },
     {
       timestamps: true
