@@ -115,9 +115,6 @@ export default function (app: Application) {
     },
     {
       timestamps: true
-    },
-    {
-      timestamps: true
     }
   )
 
