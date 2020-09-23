@@ -18,6 +18,14 @@ export default function (app: Application) {
         trim: true,
         required: true
       },
+      slug: {
+        type: String,
+        maxLength: 128,
+        index: true,
+        trim: true,
+        unique: true,
+        required: true
+      },
       description: {
         type: String,
         maxLength: 2048,
@@ -60,6 +68,10 @@ export default function (app: Application) {
       startDate: {
         type: Date,
         required: true,
+        index: true
+      },
+      endDate: {
+        type: Date,
         index: true
       },
       imageLinks: [String],
