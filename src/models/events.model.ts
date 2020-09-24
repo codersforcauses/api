@@ -31,11 +31,20 @@ export default function (app: Application) {
         trim: true,
         required: true
       },
-      // TODO: need to come back to this after mapbox api is finalised
       venue: [
         {
-          type: Object,
-          required: true
+          name: String,
+          location: {
+            address: {
+              type: String,
+              required: true
+            },
+            // Coordinates stores as [lng, lat]
+            coordinates: {
+              type: [Number],
+              required: true
+            }
+          }
         }
       ],
       times: [
