@@ -91,16 +91,6 @@ export default function (app: Application) {
           }
         }
       ],
-      projects: [
-        {
-          type: mongoose.Schema.Types.ObjectId
-        }
-      ],
-      events: [
-        {
-          type: mongoose.Schema.Types.ObjectId
-        }
-      ],
       profileImage: String,
       isFinancialMember: {
         type: Boolean,
