@@ -87,7 +87,8 @@ export default function (app: Application) {
               'app_store',
               'play_store',
               'website'
-            ]
+            ],
+            required: true
           },
           link: {
             type: String,
