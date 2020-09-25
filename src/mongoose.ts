@@ -1,19 +1,19 @@
-import mongoose from "mongoose";
-import { Application } from "./declarations";
-import logger from "./logger";
+import mongoose from 'mongoose'
+import { Application } from './declarations'
+import logger from './logger'
 
 export default function (app: Application) {
-  mongoose.Promise = global.Promise;
+  mongoose.Promise = global.Promise
   mongoose
-    .connect(app.get("mongodb"), {
+    .connect(app.get('mongodb'), {
       useCreateIndex: true,
       useNewUrlParser: true,
-      useUnifiedTopology: true,
+      useUnifiedTopology: true
     })
-    .catch((err) => {
-      logger.error(err);
-      process.exit(1);
-    });
+    .catch(err => {
+      logger.error(err)
+      process.exit(1)
+    })
 
-  app.set("mongooseClient", mongoose);
+  app.set('mongooseClient', mongoose)
 }
