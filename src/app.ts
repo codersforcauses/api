@@ -12,6 +12,7 @@ import middleware from './middleware'
 import services from './services'
 import appHooks from './app.hooks'
 import mongoose from './mongoose'
+import seeder from './seeder'
 // Don't remove this comment. It's needed to format import lines nicely.
 
 const app: Application = express(feathers())
@@ -34,6 +35,8 @@ app.configure(mongoose)
 app.configure(middleware)
 // Set up our services (see `services/index.js`)
 app.configure(services)
+// Add seeder if not production
+process.env.NODE_ENV !== 'production' && app.configure(seeder)
 
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound())

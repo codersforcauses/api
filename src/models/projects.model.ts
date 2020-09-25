@@ -18,6 +18,14 @@ export default function (app: Application) {
         trim: true,
         required: true
       },
+      slug: {
+        type: String,
+        maxLength: 128,
+        index: true,
+        trim: true,
+        unique: true,
+        required: true
+      },
       description: {
         type: String,
         maxLength: 2048,
@@ -62,6 +70,10 @@ export default function (app: Application) {
         required: true,
         index: true
       },
+      endDate: {
+        type: Date,
+        index: true
+      },
       imageLinks: [String],
       impact: [{ type: String, maxLength: 256, trim: true }],
       links: [
@@ -75,7 +87,8 @@ export default function (app: Application) {
               'app_store',
               'play_store',
               'website'
-            ]
+            ],
+            required: true
           },
           link: {
             type: String,
@@ -86,14 +99,12 @@ export default function (app: Application) {
       ],
       tech: [
         {
-          type: {
-            type: String,
-            maxLength: 64,
-            index: true
-          }
+          type: String,
+          maxLength: 64,
+          index: true
         }
       ],
-      users: [{ type: mongoose.Schema.Types.ObjectId }]
+      members: [{ type: mongoose.Schema.Types.ObjectId }]
     },
     {
       timestamps: true
