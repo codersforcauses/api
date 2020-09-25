@@ -83,7 +83,7 @@ const createProject = (seededUsers: Array<{ _id: string }>) => {
       ),
       tech: generateFakeData(
         new Array(faker.random.number(10)).fill(0),
-        faker.lorem.word(35)
+        faker.lorem.word(faker.random.number(10))
       ),
       members: seededUsers
     })

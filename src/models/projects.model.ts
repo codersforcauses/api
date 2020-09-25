@@ -99,11 +99,9 @@ export default function (app: Application) {
       ],
       tech: [
         {
-          type: {
-            type: String,
-            maxLength: 64,
-            index: true
-          }
+          type: String,
+          maxLength: 64,
+          index: true
         }
       ],
       members: [{ type: mongoose.Schema.Types.ObjectId }]
