@@ -58,7 +58,7 @@
     "@types/serve-favicon": "2.5.0",
     "axios": "0.20.0",
     "faker": "5.1.0",
-    "jest": "25.3.0",
+    "jest": "25.5.4",
     "nodemon": "2.0.4",
     "shx": "0.3.2",
     "ts-jest": "25.3.1",
