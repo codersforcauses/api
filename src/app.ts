@@ -1,5 +1,3 @@
-import path from 'path'
-import favicon from 'serve-favicon'
 import compress from 'compression'
 import helmet from 'helmet'
 import cors from 'cors'
@@ -7,14 +5,12 @@ import cors from 'cors'
 import feathers from '@feathersjs/feathers'
 import configuration from '@feathersjs/configuration'
 import express from '@feathersjs/express'
-import socketio from '@feathersjs/socketio'
 
 import { Application } from './declarations'
 import logger from './logger'
 import middleware from './middleware'
 import services from './services'
 import appHooks from './app.hooks'
-import channels from './channels'
 import mongoose from './mongoose'
 import seeder from './seeder'
 // Don't remove this comment. It's needed to format import lines nicely.
@@ -29,13 +25,9 @@ app.use(cors())
 app.use(compress())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(favicon(path.join(app.get('public'), 'favicon.ico')))
-// Host the public folder
-app.use('/', express.static(app.get('public')))
 
 // Set up Plugins and providers
 app.configure(express.rest())
-app.configure(socketio())
 
 app.configure(mongoose)
 
@@ -43,9 +35,6 @@ app.configure(mongoose)
 app.configure(middleware)
 // Set up our services (see `services/index.js`)
 app.configure(services)
-// Set up event channels (see channels.js)
-app.configure(channels)
-
 // Add seeder if not production
 process.env.NODE_ENV !== 'production' && app.configure(seeder)
 
