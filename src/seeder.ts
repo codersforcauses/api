@@ -5,9 +5,6 @@ import { default as userData } from './users.seed.json'
 
 const DBItems = 5
 
-const generateFakeData = (array: Array<number>, data: string) =>
-  array.map(() => data)
-
 const createEvent = (seededUsers: Array<{ _id: string }>) => {
   const types = ['workshop', 'social', 'industry_night', 'other']
   const events = []
@@ -37,10 +34,9 @@ const createEvent = (seededUsers: Array<{ _id: string }>) => {
           to: faker.date.soon(0, fromDate)
         }
       ],
-      imageLinks: generateFakeData(
-        new Array(faker.random.number(5)).fill(0),
-        faker.image.imageUrl()
-      ),
+      imageLinks: new Array(faker.random.number(5))
+        .fill(0)
+        .map(() => faker.image.imageUrl()),
       type: faker.random.arrayElement(types),
       price: {
         member: faker.commerce.price(0, 20),
@@ -73,18 +69,15 @@ const createProject = (seededUsers: Array<{ _id: string }>) => {
       ],
       startDate: faker.date.soon(),
       endDate: faker.date.future(2),
-      imageLinks: generateFakeData(
-        new Array(faker.random.number(5)).fill(0),
-        faker.image.imageUrl()
-      ),
-      impact: generateFakeData(
-        new Array(faker.random.number(5)).fill(0),
-        faker.lorem.sentence()
-      ),
-      tech: generateFakeData(
-        new Array(faker.random.number(10)).fill(0),
-        faker.lorem.word(faker.random.number(10))
-      ),
+      imageLinks: new Array(faker.random.number(5))
+        .fill(0)
+        .map(() => faker.image.imageUrl()),
+      impact: new Array(faker.random.number(5))
+        .fill(0)
+        .map(() => faker.lorem.sentence()),
+      tech: new Array(faker.random.number(10))
+        .fill(0)
+        .map(() => faker.lorem.word(faker.random.number(10))),
       members: seededUsers
     })
   }
