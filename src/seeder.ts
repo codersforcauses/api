@@ -1,10 +1,12 @@
 import * as faker from 'faker/locale/en_AU'
-import { seed } from 'faker/locale/en_AU'
 import { Application } from './declarations'
 import logger from './logger'
 import { default as userData } from './users.seed.json'
 
 const DBItems = 5
+
+const generateFakeData = (array: Array<number>, data: string) =>
+  array.map(() => data)
 
 const createEvent = (seededUsers: Array<{ _id: string }>) => {
   const types = ['workshop', 'social', 'industry_night', 'other']
@@ -35,8 +37,9 @@ const createEvent = (seededUsers: Array<{ _id: string }>) => {
           to: faker.date.soon(0, fromDate)
         }
       ],
-      imageLinks: new Array(faker.random.number(5)).map(() =>
-        JSON.stringify(faker.image.imageUrl())
+      imageLinks: generateFakeData(
+        new Array(faker.random.number(5)).fill(0),
+        faker.image.imageUrl()
       ),
       type: faker.random.arrayElement(types),
       price: {
@@ -70,13 +73,18 @@ const createProject = (seededUsers: Array<{ _id: string }>) => {
       ],
       startDate: faker.date.soon(),
       endDate: faker.date.future(2),
-      imageLinks: new Array(faker.random.number(5)).map(() =>
-        JSON.stringify(faker.image.imageUrl())
+      imageLinks: generateFakeData(
+        new Array(faker.random.number(5)).fill(0),
+        faker.image.imageUrl()
       ),
-      impact: new Array(faker.random.number(5)).map(() =>
+      impact: generateFakeData(
+        new Array(faker.random.number(5)).fill(0),
         faker.lorem.sentence()
       ),
-      tech: new Array(faker.random.number(10)).map(() => faker.lorem.word()),
+      tech: generateFakeData(
+        new Array(faker.random.number(10)).fill(0),
+        faker.lorem.word(35)
+      ),
       members: seededUsers
     })
   }
@@ -93,7 +101,7 @@ export default async function (app: Application) {
     const { data: usersInDB } = await userService.find()
     const users =
       usersInDB.length === 0
-        ? userData.map(user => new Promise(() => userService.create(user)))
+        ? userData.map(user => userService.create(user))
         : []
     await Promise.all(users)
 
@@ -107,17 +115,15 @@ export default async function (app: Application) {
     const { data: eventsInDB } = await eventService.find()
     const events =
       eventsInDB.length === 0
-        ? createEvent(seededUsers).map(
-            event => new Promise(() => eventService.create(event))
-          )
+        ? createEvent(seededUsers).map(event => eventService.create(event))
         : []
 
     // Projects
     const { data: projectsInDB } = await projectService.find()
     const projects =
       projectsInDB.length === 0
-        ? createProject(seededUsers).map(
-            project => new Promise(() => projectService.create(project))
+        ? createProject(seededUsers).map(project =>
+            projectService.create(project)
           )
         : []
 
