@@ -43,7 +43,7 @@
     "cors": "2.8.5",
     "feathers-mongoose": "8.3.1",
     "helmet": "4.1.1",
-    "mongoose": "5.10.6",
+    "mongoose": "5.10.7",
     "winston": "3.3.3"
   },
   "devDependencies": {
