@@ -34,6 +34,14 @@ export default function (app: Application) {
         required: true,
         unique: true
       },
+      awsSub: {
+        type: String,
+        maxLength: 64,
+        index: true,
+        trim: true,
+        required: true,
+        unique: true
+      },
       gender: {
         type: String,
         enum: ['female', 'male', 'other']
@@ -43,6 +51,8 @@ export default function (app: Application) {
         {
           type: String,
           enum: [
+            'admin',
+            'test',
             'member',
             'president',
             'vice_president',
@@ -81,16 +91,6 @@ export default function (app: Application) {
           }
         }
       ],
-      projects: [
-        {
-          type: mongoose.Schema.Types.ObjectId
-        }
-      ],
-      events: [
-        {
-          type: mongoose.Schema.Types.ObjectId
-        }
-      ],
       profileImage: String,
       isFinancialMember: {
         type: Boolean,
@@ -100,7 +100,7 @@ export default function (app: Application) {
         {
           type: {
             type: String,
-            enum: ['aws_cognito', 'stripe']
+            enum: ['stripe']
           },
           ref: {
             type: String,
@@ -110,9 +110,6 @@ export default function (app: Application) {
           data: {}
         }
       ]
-    },
-    {
-      timestamps: true
     },
     {
       timestamps: true
