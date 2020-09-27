@@ -6,7 +6,6 @@
     "awsSub": "d368e46e-814d-47c1-850a-e8458bcdc0fd",
     "gender": "other",
     "dob": "2016-09-30T00:00:00.000Z",
-    "roles": ["test"],
-    "isFinancialMember": false
+    "roles": ["test"]
   }
 ]

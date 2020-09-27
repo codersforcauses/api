@@ -42,6 +42,10 @@ export default function (app: Application) {
         required: true,
         unique: true
       },
+      isGuildMember: {
+        type: Boolean,
+        default: false
+      },
       gender: {
         type: String,
         enum: ['female', 'male', 'other']
