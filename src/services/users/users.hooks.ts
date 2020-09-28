@@ -1,11 +1,21 @@
+import { HookContext } from '@feathersjs/feathers'
+import userJwt from './hooks/user-jwt'
 
-import userJwt from '../../hooks/user-jwt';
 export default {
   before: {
     all: [],
     find: [],
     get: [userJwt()],
-    create: [userJwt()],
+    create: [
+      (context: HookContext) => {
+        if (context.params.provider === 'rest') {
+          context.data.roles = ['member']
+        } else {
+          context.data.roles = ['test']
+        }
+        return context
+      }
+    ],
     update: [userJwt()],
     patch: [userJwt()],
     remove: [userJwt()]
@@ -30,4 +40,4 @@ export default {
     patch: [],
     remove: []
   }
-};
+}
