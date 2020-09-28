@@ -9,6 +9,7 @@ export default {
     create: [
       (context: HookContext) => {
         if (context.params.provider === 'rest') {
+          // will need to update this when payments are available
           context.data.roles = ['member']
         } else {
           context.data.roles = ['test']
