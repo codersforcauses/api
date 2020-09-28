@@ -5,8 +5,8 @@ import { Hook, HookContext } from '@feathersjs/feathers'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default (options = {}): Hook => {
   return async (context: HookContext): Promise<HookContext> => {
-    const { data } = context
-    console.log(data)
+    const { data, params } = context
+    console.log(params, data)
 
     return context
   }
