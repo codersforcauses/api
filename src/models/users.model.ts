@@ -48,7 +48,8 @@ export default function (app: Application) {
       },
       gender: {
         type: String,
-        enum: ['female', 'male', 'other']
+        enum: ['female', 'male', 'other'],
+        default: 'other'
       },
       dob: Date,
       roles: [
