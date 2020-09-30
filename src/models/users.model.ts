@@ -34,6 +34,11 @@ export default function (app: Application) {
         required: true,
         unique: true
       },
+      signUpType: {
+        type: String,
+        enum: ['pheme', 'email'],
+        default: 'email'
+      },
       awsSub: {
         type: String,
         maxLength: 64,
