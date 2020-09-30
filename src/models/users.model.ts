@@ -46,6 +46,11 @@ export default function (app: Application) {
         type: Boolean,
         default: false
       },
+      bio: {
+        type: String,
+        maxLength: 2048,
+        trim: true
+      },
       gender: {
         type: String,
         enum: ['female', 'male', 'other'],
@@ -89,6 +94,11 @@ export default function (app: Application) {
               'snapchat'
             ]
           },
+          username: {
+            type: String,
+            maxLength: 64,
+            trim: true
+          },
           link: {
             type: String,
             maxLength: 128,
@@ -96,7 +106,10 @@ export default function (app: Application) {
           }
         }
       ],
-      profileImage: String,
+      profileImage: {
+        img: String,
+        hash: String
+      },
       isFinancialMember: {
         type: Boolean,
         default: false
