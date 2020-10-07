@@ -1,5 +1,5 @@
 import { HookContext } from '@feathersjs/feathers'
-import userJwt from './hooks/user-jwt'
+import userJwt from '../../hooks/user-jwt'
 
 export default {
   before: {
@@ -23,7 +23,15 @@ export default {
   },
 
   after: {
-    all: [],
+    all: [
+      (context: HookContext) => {
+        // removes name to response
+        context.result.data.forEach((user: any) => {
+          user.name = `${user.firstName} ${user.lastName}`
+        })
+        return context
+      }
+    ],
     find: [],
     get: [],
     create: [],
