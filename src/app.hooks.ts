@@ -17,9 +17,9 @@ export default {
     all: [
       (context: HookContext) => {
         // removes version number from response
-        context.result.data.forEach((data: any) => {
-          delete data.__v
-        })
+        context.result.hasOwnProperty('data')
+          ? context.result.data.forEach((data: any) => delete data.__v)
+          : delete context.result.__v
         return context
       }
     ],

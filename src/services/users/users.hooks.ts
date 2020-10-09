@@ -26,9 +26,16 @@ export default {
     all: [
       (context: HookContext) => {
         // removes name to response
-        context.result.data.forEach((user: any) => {
-          user.name = `${user.firstName} ${user.lastName}`
-        })
+        const checkNameExists = (user: any) =>
+          user.hasOwnProperty('firstName') && user.hasOwnProperty('lastName')
+            ? `${user.firstName} ${user.lastName}`
+            : undefined
+
+        if (context.result.hasOwnProperty('data')) {
+          context.result.data.forEach((user: any) => {
+            user.name = checkNameExists(user)
+          })
+        } else context.result.name = checkNameExists(context.result)
         return context
       }
     ],
