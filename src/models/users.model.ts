@@ -53,7 +53,7 @@ export default function (app: Application) {
       },
       bio: {
         type: String,
-        maxLength: 2048,
+        maxLength: 512,
         trim: true
       },
       gender: {
