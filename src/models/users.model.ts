@@ -119,6 +119,12 @@ export default function (app: Application) {
         type: Boolean,
         default: false
       },
+      tech: [
+        {
+          type: String,
+          trim: true
+        }
+      ],
       services: [
         {
           type: {
